@@ -22,7 +22,8 @@ export class Portainer implements INodeType {
 			},
 		],
 		requestDefaults: {
-			baseURL: '={{$credentials.baseUrl}}/api',
+			baseURL: '={{$credentials.baseUrl.replace(/\/+$/, "")}}/api',
+			skipSslCertificateValidation: '={{$credentials.ignoreSsl}}',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',

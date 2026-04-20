@@ -5,6 +5,15 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.3] - 2026-04-20
+
+### ✨ Added
+- **"Ignore SSL Issues" toggle** in the Portainer API credential. Enable it when your Portainer instance uses a self-signed certificate (typical on port 9443). Wires `skipSslCertificateValidation` into both the credential test and the node's request defaults.
+
+### 🐛 Fixed
+- **"Invalid URL" when saving the credential** (#5): the credential test now strips trailing slashes from the Portainer URL before joining `/api/users/me`, and the node does the same when building request defaults, so `https://host:9443`, `https://host:9443/`, and `https://host:9443//` all resolve correctly.
+- Clearer credential description + placeholder documenting the expected `http(s)://host:port` format.
+
 ## [2.1.2] - 2026-04-20
 
 ### 🐛 Fixed
