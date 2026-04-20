@@ -1,7 +1,7 @@
 {
   "name": "n8n-nodes-portainer",
   "version": "2.1.1",
-  "description": "Nó personalizado do n8n para integração completa com API Portainer 2.27.8 - Cobertura 100% com 21 recursos e 150+ operações incluindo Docker Containers, Images, Services, Swarm, Networks, Volumes, Stacks, Secrets, Configs, Nodes, Templates, Registries, Teams, Settings, Webhooks, Edge Computing e System",
+  "description": "Custom n8n node for full integration with the Portainer API 2.27.8 — 100% coverage with 21 resources and 150+ operations including Docker Containers, Images, Services, Swarm, Networks, Volumes, Stacks, Secrets, Configs, Nodes, Templates, Registries, Teams, Settings, Webhooks, Edge Computing, and System",
   "keywords": [
     "n8n-community-node-package",
     "n8n",

@@ -16,8 +16,8 @@ export class PortainerApi implements ICredentialType {
 			type: 'string',
 			default: '',
 			required: true,
-			description: 'URL do seu servidor Portainer (ex: https://portainer.exemplo.com:9443)',
-			placeholder: 'https://portainer.exemplo.com:9443',
+			description: 'URL of your Portainer server (e.g. https://portainer.example.com:9443)',
+			placeholder: 'https://portainer.example.com:9443',
 		},
 		{
 			displayName: 'API Key',
@@ -26,7 +26,7 @@ export class PortainerApi implements ICredentialType {
 			typeOptions: { password: true },
 			default: '',
 			required: true,
-			description: 'Sua Chave de API do Portainer. Obtenha em Configurações > Tokens de Acesso na sua conta Portainer.',
+			description: 'Your Portainer API key. Get it from Settings > Access Tokens in your Portainer account.',
 			placeholder: 'ptr_xxxxxxxxxxxxxxxxxxxxxxxx',
 		},
 	];
@@ -52,7 +52,7 @@ export class PortainerApi implements ICredentialType {
 				properties: {
 					key: 'Id',
 					value: undefined,
-					message: 'Chave de API inválida ou servidor inacessível. Verifique a URL e a chave de API.',
+					message: 'Invalid API key or server unreachable. Check the URL and the API key.',
 				},
 			},
 		],

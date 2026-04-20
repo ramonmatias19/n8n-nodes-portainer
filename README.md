@@ -1,440 +1,440 @@
 # n8n-nodes-portainer
 
 <p align="center"><br>
-Este Community Node é uma solução 100% gratuita, criada com o intuito de simplificar e auxiliar toda a comunidade a integrar e utilizar ao máximo os principais recursos oferecidos pelo <b>Portainer</b> em seus projetos no N8N.
+This Community Node is a 100% free solution, created to simplify and help the community integrate and fully leverage the main features offered by <b>Portainer</b> in n8n workflows.
 </p>
 <br>
 	
 <div align="center">
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.npmjs.org%2Fdownloads%2Fpoint%2Flast-year%2Fn8n-nodes-portainer&query=downloads&style=for-the-badge&label=Total%20de%20Downloads&labelColor=%230d1117&color=%23359514&cacheSeconds=30&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fn8n-nodes-portainer" alt="Downloads Badge">
-  <img src="https://img.shields.io/npm/v/n8n-nodes-portainer?style=for-the-badge&label=Versão&labelColor=%230d1117&color=%23007ACC" alt="Version Badge">
-  <img src="https://img.shields.io/npm/l/n8n-nodes-portainer?style=for-the-badge&label=Licença&labelColor=%230d1117&color=%23FFA500" alt="License Badge">
+	<img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.npmjs.org%2Fdownloads%2Fpoint%2Flast-year%2Fn8n-nodes-portainer&query=downloads&style=for-the-badge&label=Total%20Downloads&labelColor=%230d1117&color=%23359514&cacheSeconds=30&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fn8n-nodes-portainer" alt="Downloads Badge">
+	<img src="https://img.shields.io/npm/v/n8n-nodes-portainer?style=for-the-badge&label=Version&labelColor=%230d1117&color=%23007ACC" alt="Version Badge">
+	<img src="https://img.shields.io/npm/l/n8n-nodes-portainer?style=for-the-badge&label=License&labelColor=%230d1117&color=%23FFA500" alt="License Badge">
 </div>
 <br>
 
 <p align="center">
-  <a href="mailto:contato@lumiaria.com.br"><img src="https://img.shields.io/badge/Email-Suporte-red?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>     
-  <a href="https://github.com/ramonmatias19/n8n-nodes-portainer"><img src="https://img.shields.io/badge/GitHub-Repositório-black?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>     
+	<a href="mailto:contato@lumiaria.com.br"><img src="https://img.shields.io/badge/Email-Support-red?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>     
+	<a href="https://github.com/ramonmatias19/n8n-nodes-portainer"><img src="https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>     
   <a href="https://www.npmjs.com/package/n8n-nodes-portainer"><img src="https://img.shields.io/badge/NPM-Package-red?style=for-the-badge&logo=npm&logoColor=white" alt="NPM"></a>
 </p>
 
-> **Aviso:** Este node foi desenvolvido de forma independente para facilitar integrações com a API pública do Portainer no n8n.  
-> Não é afiliado, endossado ou mantido pelo Portainer.  
-> Todas as marcas citadas pertencem aos seus respectivos proprietários.
+> **Notice:** This node was developed independently to make it easier to integrate with Portainer's public API in n8n.  
+> It is not affiliated with, endorsed by, or maintained by Portainer.  
+> All referenced trademarks belong to their respective owners.
 
 <h1></h1>
 
-<h3>⚙️ Requisitos</h3>
+<h3>⚙️ Requirements</h3>
 
-Para utilizar o nosso **Community Node**, é necessário atender aos seguintes requisitos:  
-- **N8N** na versão **1.54.4** ou superior  
-- **Node.js** na versão **16.0.0** ou superior  
-- **Conta ativa** no **Portainer** com token de API  
+To use this **Community Node**, you need:  
+- **n8n** version **1.54.4** or newer  
+- **Node.js** version **16.0.0** or newer  
+- An active **Portainer** account with an API token  
 
 <h1></h1>
 
-<h3>📌 Recursos Disponíveis</h3>
+<h3>📌 Available Resources</h3>
 
 <h3>🐳 Containers</h3>
-📝 Gerenciamento completo de containers Docker com operações avançadas de criação, execução, monitoramento e controle de ciclo de vida.
+📝 Full Docker container management with advanced operations for creation, execution, monitoring, and lifecycle control.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Create</b> - Criar novos containers</summary>
+	  <summary>   ✅ <b>Create</b> - Create new containers</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar containers</summary>
+	  <summary>   ✅ <b>Delete</b> - Delete containers</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Exec</b> - Executar comandos nos containers</summary>
+	  <summary>   ✅ <b>Exec</b> - Execute commands in containers</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas do container</summary>
+	  <summary>   ✅ <b>Get</b> - Get specific container information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Logs</b> - Obter logs do container</summary>
+	  <summary>   ✅ <b>Get Logs</b> - Get container logs</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os containers</summary>
+	  <summary>   ✅ <b>Get Many</b> - List all containers</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Stats</b> - Obter estatísticas de uso</summary>
+	  <summary>   ✅ <b>Get Stats</b> - Get usage statistics</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Inspect</b> - Inspecionar detalhes do container</summary>
+	  <summary>   ✅ <b>Inspect</b> - Inspect container details</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Pause</b> - Pausar containers em execução</summary>
+	  <summary>   ✅ <b>Pause</b> - Pause running containers</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Restart</b> - Reiniciar containers</summary>
+	  <summary>   ✅ <b>Restart</b> - Restart containers</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Start</b> - Iniciar containers parados</summary>
+	  <summary>   ✅ <b>Start</b> - Start stopped containers</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Stop</b> - Parar containers em execução</summary>
+	  <summary>   ✅ <b>Stop</b> - Stop running containers</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Unpause</b> - Despausar containers pausados</summary>
+	  <summary>   ✅ <b>Unpause</b> - Unpause paused containers</summary>
 	</details>
 </details>
 
 <h3>🖼️ Images</h3>
-📝 Gerenciamento completo de imagens Docker incluindo build, pull, push, tag e análise de histórico para controle total do ciclo de vida das imagens.
+📝 Full Docker image management including build, pull, push, tagging, and history inspection for lifecycle control.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Build</b> - Construir imagens a partir de Dockerfile</summary>
+	  <summary>   ✅ <b>Build</b> - Build images from a Dockerfile</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar imagens</summary>
+	  <summary>   ✅ <b>Delete</b> - Delete images</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas da imagem</summary>
+	  <summary>   ✅ <b>Get</b> - Get specific image information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get History</b> - Obter histórico da imagem</summary>
+	  <summary>   ✅ <b>Get History</b> - Get image history</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todas as imagens</summary>
+	  <summary>   ✅ <b>Get Many</b> - List all images</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Inspect</b> - Inspecionar detalhes da imagem</summary>
+	  <summary>   ✅ <b>Inspect</b> - Inspect image details</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Pull</b> - Baixar imagens do registry</summary>
+	  <summary>   ✅ <b>Pull</b> - Pull images from a registry</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Push</b> - Enviar imagens para o registry</summary>
+	  <summary>   ✅ <b>Push</b> - Push images to a registry</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Tag</b> - Criar tags para imagens</summary>
+	  <summary>   ✅ <b>Tag</b> - Create tags for images</summary>
 	</details>
 </details>
 
 <h3>⚙️ Services (Docker Swarm)</h3>
-📝 Gerenciamento completo de services Docker Swarm com criação, escalonamento, atualização e monitoramento para orquestração de containers distribuídos.
+📝 Full Docker Swarm service management with creation, scaling, updates, and monitoring for distributed container orchestration.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Create</b> - Criar novos services</summary>
+	  <summary>   ✅ <b>Create</b> - Create new services</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar services</summary>
+	  <summary>   ✅ <b>Delete</b> - Delete services</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas do service</summary>
+	  <summary>   ✅ <b>Get</b> - Get specific service information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Logs</b> - Obter logs do service</summary>
+	  <summary>   ✅ <b>Get Logs</b> - Get service logs</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os services</summary>
+	  <summary>   ✅ <b>Get Many</b> - List all services</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Scale</b> - Escalar number de réplicas</summary>
+	  <summary>   ✅ <b>Scale</b> - Scale number of replicas</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Update</b> - Atualizar configurações do service</summary>
+	  <summary>   ✅ <b>Update</b> - Update service configuration</summary>
 	</details>
 </details>
 
 <h3>🔐 Secrets (Docker Swarm)</h3>
-📝 Gerenciamento seguro de secrets Docker Swarm para armazenamento e distribuição segura de informações sensíveis nos services.
+📝 Secure Docker Swarm secret management for storing and safely distributing sensitive information to services.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Create</b> - Criar novos secrets</summary>
+	  <summary>   ✅ <b>Create</b> - Create new secrets</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar secrets</summary>
+	  <summary>   ✅ <b>Delete</b> - Delete secrets</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas do secret</summary>
+	  <summary>   ✅ <b>Get</b> - Get specific secret information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os secrets</summary>
+	  <summary>   ✅ <b>Get Many</b> - List all secrets</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Inspect</b> - Inspecionar detalhes do secret</summary>
+	  <summary>   ✅ <b>Inspect</b> - Inspect secret details</summary>
 	</details>
 </details>
 
 <h3>📋 Configs (Docker Swarm)</h3>
-📝 Gerenciamento de configs Docker Swarm para distribuição de arquivos de configuração e dados não-sensíveis aos services do cluster.
+📝 Docker Swarm config management for distributing configuration files and non-sensitive data to cluster services.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Create</b> - Criar novos configs</summary>
+	  <summary>   ✅ <b>Create</b> - Create new configs</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar configs</summary>
+	  <summary>   ✅ <b>Delete</b> - Delete configs</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas do config</summary>
+	  <summary>   ✅ <b>Get</b> - Get specific config information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os configs</summary>
+	  <summary>   ✅ <b>Get Many</b> - List all configs</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Inspect</b> - Inspecionar detalhes do config</summary>
+	  <summary>   ✅ <b>Inspect</b> - Inspect config details</summary>
 	</details>
 </details>
 
 <h3>🌐 Edge Groups</h3>
-📝 Gerenciamento de grupos de edge computing para organização e controle centralizado de endpoints distribuídos geograficamente.
+📝 Edge computing group management for organizing and centrally controlling geographically distributed endpoints.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Create</b> - Criar novos grupos de edge</summary>
+	  <summary>   ✅ <b>Create</b> - Create new edge groups</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar grupos de edge</summary>
+	  <summary>   ✅ <b>Delete</b> - Delete edge groups</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas do grupo</summary>
+		<summary>   ✅ <b>Get</b> - Get specific group information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os grupos de edge</summary>
+		<summary>   ✅ <b>Get Many</b> - List all edge groups</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Update</b> - Atualizar configurações do grupo</summary>
+		<summary>   ✅ <b>Update</b> - Update group settings</summary>
 	</details>
 </details>
 
 <h3>📦 Edge Stacks</h3>
-📝 Gerenciamento de stacks de edge computing para deployment distribuído de aplicações em múltiplas localizações edge.
+📝 Edge stack management for distributed deployment of applications across multiple edge locations.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Create</b> - Criar novos stacks de edge</summary>
+		<summary>   ✅ <b>Create</b> - Create new edge stacks</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar stacks de edge</summary>
+		<summary>   ✅ <b>Delete</b> - Delete edge stacks</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas do stack</summary>
+		<summary>   ✅ <b>Get</b> - Get specific stack information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os stacks de edge</summary>
+		<summary>   ✅ <b>Get Many</b> - List all edge stacks</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Status</b> - Obter status de deployment</summary>
+		<summary>   ✅ <b>Get Status</b> - Get deployment status</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Update</b> - Atualizar configurações do stack</summary>
+		<summary>   ✅ <b>Update</b> - Update stack settings</summary>
 	</details>
 </details>
 
 <h3>🖥️ Nodes (Docker Swarm)</h3>
-📝 Gerenciamento de nodes Docker Swarm para monitoramento e controle dos nós do cluster, incluindo status e configurações.
+📝 Docker Swarm node management for monitoring and controlling cluster nodes, including status and settings.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas do node</summary>
+		<summary>   ✅ <b>Get</b> - Get specific node information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os nodes</summary>
+		<summary>   ✅ <b>Get Many</b> - List all nodes</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Inspect</b> - Inspecionar detalhes do node</summary>
+		<summary>   ✅ <b>Inspect</b> - Inspect node details</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Update</b> - Atualizar configurações do node</summary>
+		<summary>   ✅ <b>Update</b> - Update node settings</summary>
 	</details>
 </details>
 
 <h3>📚 Stacks (Docker Compose)</h3>
-📝 Gerenciamento de stacks Docker Compose para deployment e atualização de aplicações multi-container definidas em arquivos YAML.
+📝 Docker Compose stack management for deploying and updating multi-container applications defined in YAML files.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar stacks</summary>
+		<summary>   ✅ <b>Delete</b> - Delete stacks</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas do stack</summary>
+		<summary>   ✅ <b>Get</b> - Get specific stack information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os stacks</summary>
+		<summary>   ✅ <b>Get Many</b> - List all stacks</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Update</b> - Atualizar configurações do stack</summary>
+		<summary>   ✅ <b>Update</b> - Update stack settings</summary>
 	</details>
 </details>
 
 <h3>📋 Registries</h3>
-📝 Gerenciamento de registries de imagens Docker com suporte a múltiplos tipos incluindo DockerHub, ECR, Azure, GitLab e registries customizados.
+📝 Docker image registry management with support for multiple types including DockerHub, ECR, Azure, GitLab, and custom registries.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Create</b> - Criar novos registries</summary>
+		<summary>   ✅ <b>Create</b> - Create new registries</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar registries</summary>
+		<summary>   ✅ <b>Delete</b> - Delete registries</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas do registry</summary>
+		<summary>   ✅ <b>Get</b> - Get specific registry information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os registries</summary>
+		<summary>   ✅ <b>Get Many</b> - List all registries</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Update</b> - Atualizar configurações do registry</summary>
+		<summary>   ✅ <b>Update</b> - Update registry settings</summary>
 	</details>
 </details>
 
 <h3>👥 Teams</h3>
-📝 Gerenciamento de equipes no Portainer para controle de acesso baseado em grupos e permissões colaborativas.
+📝 Portainer team management for group-based access control and collaborative permissions.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Create</b> - Criar novas equipes</summary>
+		<summary>   ✅ <b>Create</b> - Create new teams</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar equipes</summary>
+		<summary>   ✅ <b>Delete</b> - Delete teams</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas da equipe</summary>
+		<summary>   ✅ <b>Get</b> - Get specific team information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todas as equipes</summary>
+		<summary>   ✅ <b>Get Many</b> - List all teams</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Update</b> - Atualizar configurações da equipe</summary>
+		<summary>   ✅ <b>Update</b> - Update team settings</summary>
 	</details>
 </details>
 
 <h3>📄 Templates</h3>
-📝 Gerenciamento de templates de aplicação do Portainer para deployment rápido de aplicações pré-configuradas.
+📝 Portainer application template management for fast deployment of pre-configured applications.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas do template</summary>
+		<summary>   ✅ <b>Get</b> - Get specific template information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os templates</summary>
+		<summary>   ✅ <b>Get Many</b> - List all templates</summary>
 	</details>
 </details>
 
 <h3>⚙️ Settings</h3>
-📝 Gerenciamento de configurações do Portainer incluindo autenticação, políticas de segurança e configurações globais da plataforma.
+📝 Portainer settings management including authentication, security policies, and global platform settings.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter configurações atuais</summary>
+		<summary>   ✅ <b>Get</b> - Get current settings</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Update</b> - Atualizar configurações</summary>
+		<summary>   ✅ <b>Update</b> - Update settings</summary>
 	</details>
 </details>
 
 <h3>🔗 Webhooks</h3>
-📝 Gerenciamento de webhooks para automação e integração com sistemas externos através de notificações HTTP.
+📝 Webhook management for automation and integration with external systems via HTTP notifications.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Create</b> - Criar novos webhooks</summary>
+		<summary>   ✅ <b>Create</b> - Create new webhooks</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar webhooks</summary>
+		<summary>   ✅ <b>Delete</b> - Delete webhooks</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os webhooks</summary>
+		<summary>   ✅ <b>Get Many</b> - List all webhooks</summary>
 	</details>
 </details>
 
 <h3>💻 System</h3>
-📝 Informações do sistema Portainer incluindo status, versão e informações dos nós para monitoramento da plataforma.
+📝 Portainer system information including status, version, and node information for platform monitoring.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Get Status</b> - Obter status do sistema</summary>
+		<summary>   ✅ <b>Get Status</b> - Get system status</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Version</b> - Obter versão do Portainer</summary>
+		<summary>   ✅ <b>Get Version</b> - Get Portainer version</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Nodes</b> - Obter informações dos nós</summary>
+		<summary>   ✅ <b>Get Nodes</b> - Get node information</summary>
 	</details>
 </details>
 
 <h3>👤 Users</h3>
-📝 Gerenciamento de usuários do Portainer para controle de acesso e administração de contas.
+📝 Portainer user management for access control and account administration.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas do usuário</summary>
+		<summary>   ✅ <b>Get</b> - Get specific user information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os usuários</summary>
+		<summary>   ✅ <b>Get Many</b> - List all users</summary>
 	</details>
 </details>
 
 <h3>💾 Volumes</h3>
-📝 Gerenciamento de volumes Docker para persistência de dados e compartilhamento entre containers.
+📝 Docker volume management for data persistence and sharing between containers.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar volumes</summary>
+		<summary>   ✅ <b>Delete</b> - Delete volumes</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os volumes</summary>
+		<summary>   ✅ <b>Get Many</b> - List all volumes</summary>
 	</details>
 </details>
 
 <h3>🌐 Networks</h3>
-📝 Gerenciamento de redes Docker para conectividade e isolamento entre containers.
+📝 Docker network management for connectivity and isolation between containers.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Delete</b> - Deletar redes</summary>
+		<summary>   ✅ <b>Delete</b> - Delete networks</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todas as redes</summary>
+		<summary>   ✅ <b>Get Many</b> - List all networks</summary>
 	</details>
 </details>
 
 <h3>🏢 Environments</h3>
-📝 Gerenciamento de ambientes/endpoints do Portainer para conexão com diferentes instâncias Docker.
+📝 Portainer environment/endpoint management for connecting to different Docker instances.
 <br>
 <details>
-  <summary><b>Lista de operações</b></summary>
+  <summary><b>Operations</b></summary>
 	<details>
-  	<summary>   ✅ <b>Get</b> - Obter informações específicas do ambiente</summary>
+		<summary>   ✅ <b>Get</b> - Get specific environment information</summary>
 	</details>
 	<details>
-  	<summary>   ✅ <b>Get Many</b> - Listar todos os ambientes</summary>
+		<summary>   ✅ <b>Get Many</b> - List all environments</summary>
 	</details>
 </details>
 
 <h1></h1>
 
-<h3>🚀 Instalação</h3>
+<h3>🚀 Installation</h3>
 
 **Via n8n Community Nodes:**
-1. Abra sua instância do n8n
-2. Vá para **Settings** → **Community Nodes**
-3. Instale o pacote: `n8n-nodes-portainer`
-4. Reinicie o n8n
+1. Open your n8n instance
+2. Go to **Settings** → **Community Nodes**
+3. Install the package: `n8n-nodes-portainer`
+4. Restart n8n
 
 **Via NPM:**
 ```bash
@@ -443,16 +443,16 @@ npm install n8n-nodes-portainer
 
 <h1></h1>
 
-<h3>🤝 Contribuição</h3>
+<h3>🤝 Contributing</h3>
 
-Contribua para o crescimento deste projeto! Você pode ajudar de diversas formas:  
-- **Pull Requests**: Envie melhorias, correções ou novas funcionalidades.  
-- **Issues**: Relate problemas ou sugira novas ideias.  
-- **Sugestões**: Compartilhe suas opiniões e feedbacks.  
-- **Documentação**: Ajude a melhorar ou expandir a documentação existente.  
+Help this project grow! You can contribute in several ways:  
+- **Pull Requests**: Send improvements, fixes, or new features.  
+- **Issues**: Report bugs or suggest ideas.  
+- **Feedback**: Share your thoughts and suggestions.  
+- **Documentation**: Help improve or expand the existing docs.  
 
 <h1></h1>
 
 <p align="center">
-Desenvolvido com ❤️ por <b>Ramon Matias</b>
+Built with ❤️ by <b>Ramon Matias</b>
 </p> 

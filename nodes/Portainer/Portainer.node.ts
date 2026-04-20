@@ -8,7 +8,7 @@ export class Portainer implements INodeType {
 		group: ['tool'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Trabalhe com dados da API do Portainer para gerenciar Docker',
+		description: 'Work with Portainer API data to manage Docker',
 		defaults: {
 			name: 'Portainer',
 		},
@@ -40,102 +40,102 @@ export class Portainer implements INodeType {
 					{
 						name: 'Config',
 						value: 'configs',
-						description: 'Gerenciar configs Docker Swarm',
+						description: 'Manage Docker Swarm configs',
 					},
 					{
 						name: 'Container',
 						value: 'containers',
-						description: 'Gerenciar containers Docker',
+						description: 'Manage Docker containers',
 					},
 					{
 						name: 'Edge Group',
 						value: 'edgeGroups',
-						description: 'Gerenciar grupos de edge computing',
+						description: 'Manage edge computing groups',
 					},
 					{
 						name: 'Edge Stack',
 						value: 'edgeStacks',
-						description: 'Gerenciar stacks de edge computing',
+						description: 'Manage edge computing stacks',
 					},
 					{
 						name: 'Environment',
 						value: 'environments',
-						description: 'Gerenciar ambientes/endpoints',
+						description: 'Manage environments/endpoints',
 					},
 					{
 						name: 'Image',
 						value: 'images',
-						description: 'Gerenciar imagens Docker',
+						description: 'Manage Docker images',
 					},
 					{
 						name: 'Network',
 						value: 'networks',
-						description: 'Gerenciar redes Docker',
+						description: 'Manage Docker networks',
 					},
 					{
 						name: 'Node',
 						value: 'nodes',
-						description: 'Gerenciar nodes Docker Swarm',
+						description: 'Manage Docker Swarm nodes',
 					},
 					{
 						name: 'Registry',
 						value: 'registries',
-						description: 'Gerenciar registries de imagens',
+						description: 'Manage image registries',
 					},
 					{
 						name: 'Role',
 						value: 'roles',
-						description: 'Gerenciar roles e permissões',
+						description: 'Manage roles and permissions',
 					},
 					{
 						name: 'Secret',
 						value: 'secrets',
-						description: 'Gerenciar secrets Docker Swarm',
+						description: 'Manage Docker Swarm secrets',
 					},
 					{
 						name: 'Service',
 						value: 'services',
-						description: 'Gerenciar services Docker Swarm',
+						description: 'Manage Docker Swarm services',
 					},
 					{
 						name: 'Setting',
 						value: 'settings',
-						description: 'Gerenciar configurações do Portainer',
+						description: 'Manage settings in Portainer',
 					},
 					{
 						name: 'Stack',
 						value: 'stacks',
-						description: 'Gerenciar stacks Docker Compose',
+						description: 'Manage Docker Compose stacks',
 					},
 					{
 						name: 'System',
 						value: 'system',
-						description: 'Informações do sistema e status',
+						description: 'System information and status',
 					},
 					{
 						name: 'Team',
 						value: 'teams',
-						description: 'Gerenciar equipes e membros',
+						description: 'Manage teams and members',
 					},
 					{
 						name: 'Template',
 						value: 'templates',
-						description: 'Gerenciar templates de aplicação',
+						description: 'Manage application templates',
 					},
 					{
 						name: 'User',
 						value: 'users',
-						description: 'Gerenciar usuários',
+						description: 'Manage users',
 					},
 					{
 						name: 'Volume',
 						value: 'volumes',
-						description: 'Gerenciar volumes Docker',
+						description: 'Manage Docker volumes',
 					},
 					{
 						name: 'Webhook',
 						value: 'webhooks',
-						description: 'Gerenciar webhooks',
+						description: 'Manage webhooks',
 					},
 				],
 				default: 'containers',
@@ -158,8 +158,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar templates',
-						description: 'Recuperar todos os templates',
+						action: 'List templates',
+						description: 'Retrieve all templates',
 						routing: {
 							request: {
 								method: 'GET',
@@ -170,8 +170,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Obter template',
-						description: 'Obter um template específico por ID',
+						action: 'Get template',
+						description: 'Get a template by ID',
 						routing: {
 							request: {
 								method: 'GET',
@@ -200,8 +200,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Create',
 					value: 'create',
-					action: 'Criar registry',
-					description: 'Criar um novo registry',
+					action: 'Create registry',
+					description: 'Create a new registry',
 					routing: {
 						request: {
 							method: 'POST',
@@ -219,8 +219,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Delete',
 					value: 'delete',
-					action: 'Deletar registry',
-					description: 'Deletar um registry',
+					action: 'Delete registry',
+					description: 'Delete a registry',
 					routing: {
 						request: {
 							method: 'DELETE',
@@ -231,8 +231,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Get',
 					value: 'get',
-					action: 'Obter registry',
-					description: 'Obter um registry específico por ID',
+					action: 'Get registry',
+					description: 'Get a registry by ID',
 					routing: {
 						request: {
 							method: 'GET',
@@ -243,8 +243,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Get Many',
 					value: 'getMany',
-					action: 'Listar registries',
-					description: 'Recuperar todos os registries',
+					action: 'List registries',
+					description: 'Retrieve all registries',
 					routing: {
 						request: {
 							method: 'GET',
@@ -255,8 +255,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Update',
 					value: 'update',
-					action: 'Atualizar registry',
-					description: 'Atualizar um registry',
+					action: 'Update registry',
+					description: 'Update a registry',
 					routing: {
 						request: {
 							method: 'PUT',
@@ -291,8 +291,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Create',
 					value: 'create',
-					action: 'Criar team',
-					description: 'Criar uma nova equipe',
+					action: 'Create team',
+					description: 'Create a new team',
 					routing: {
 						request: {
 							method: 'POST',
@@ -306,8 +306,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Delete',
 					value: 'delete',
-					action: 'Deletar team',
-					description: 'Deletar uma equipe',
+					action: 'Delete team',
+					description: 'Delete a team',
 					routing: {
 						request: {
 							method: 'DELETE',
@@ -318,8 +318,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Get',
 					value: 'get',
-					action: 'Obter team',
-					description: 'Obter uma equipe específica por ID',
+					action: 'Get team',
+					description: 'Get a team by ID',
 					routing: {
 						request: {
 							method: 'GET',
@@ -330,8 +330,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Get Many',
 					value: 'getMany',
-					action: 'Listar teams',
-					description: 'Recuperar todas as equipes',
+					action: 'List teams',
+					description: 'Retrieve all teams',
 					routing: {
 						request: {
 							method: 'GET',
@@ -342,8 +342,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Update',
 					value: 'update',
-					action: 'Atualizar team',
-					description: 'Atualizar uma equipe',
+					action: 'Update team',
+					description: 'Update a team',
 					routing: {
 						request: {
 							method: 'PUT',
@@ -375,8 +375,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Obter configura es',
-						description: 'Obter configurações do Portainer',
+						action: 'Get settings',
+						description: 'Get settings in Portainer',
 						routing: {
 							request: {
 								method: 'GET',
@@ -387,8 +387,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Update',
 						value: 'update',
-						action: 'Atualizar configura es',
-						description: 'Atualizar configurações do Portainer',
+						action: 'Update settings',
+						description: 'Update settings in Portainer',
 						routing: {
 							request: {
 								method: 'PUT',
@@ -434,8 +434,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Create',
 						value: 'create',
-						action: 'Criar webhook',
-						description: 'Criar um novo webhook',
+						action: 'Create webhook',
+						description: 'Create a new webhook',
 						routing: {
 							request: {
 								method: 'POST',
@@ -451,8 +451,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Delete',
 						value: 'delete',
-						action: 'Deletar webhook',
-						description: 'Deletar um webhook',
+						action: 'Delete webhook',
+						description: 'Delete a webhook',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -463,8 +463,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar webhooks',
-						description: 'Recuperar todos os webhooks',
+						action: 'List webhooks',
+						description: 'Retrieve all webhooks',
 						routing: {
 							request: {
 								method: 'GET',
@@ -496,8 +496,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Status',
 						value: 'getStatus',
-						action: 'Obter status',
-						description: 'Obter status do sistema',
+						action: 'Get status',
+						description: 'Get system status',
 						routing: {
 							request: {
 								method: 'GET',
@@ -508,8 +508,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Version',
 						value: 'getVersion',
-						action: 'Obter vers o',
-						description: 'Obter versão do Portainer',
+						action: 'Get version',
+						description: 'Get Portainer version',
 						routing: {
 							request: {
 								method: 'GET',
@@ -520,8 +520,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Nodes',
 						value: 'getNodes',
-						action: 'Obter n s',
-						description: 'Obter informações dos nós',
+						action: 'Get nodes',
+						description: 'Get node information',
 						routing: {
 							request: {
 								method: 'GET',
@@ -550,8 +550,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Create',
 					value: 'create',
-					action: 'Criar edge group',
-					description: 'Criar um novo grupo de edge computing',
+					action: 'Create edge group',
+					description: 'Create a new edge computing group',
 					routing: {
 						request: {
 							method: 'POST',
@@ -568,8 +568,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Delete',
 					value: 'delete',
-					action: 'Deletar edge group',
-					description: 'Deletar um grupo de edge computing',
+					action: 'Delete edge group',
+					description: 'Delete a edge computing group',
 					routing: {
 						request: {
 							method: 'DELETE',
@@ -580,8 +580,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Get',
 					value: 'get',
-					action: 'Obter edge group',
-					description: 'Obter um grupo de edge computing específico por ID',
+					action: 'Get edge group',
+					description: 'Get a edge computing group by ID',
 					routing: {
 						request: {
 							method: 'GET',
@@ -592,8 +592,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Get Many',
 					value: 'getMany',
-					action: 'Listar edge groups',
-					description: 'Recuperar todos os grupos de edge computing',
+					action: 'List edge groups',
+					description: 'Retrieve all edge computing groups',
 					routing: {
 						request: {
 							method: 'GET',
@@ -604,8 +604,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Update',
 					value: 'update',
-					action: 'Atualizar edge group',
-					description: 'Atualizar um grupo de edge computing',
+					action: 'Update edge group',
+					description: 'Update a edge computing group',
 					routing: {
 						request: {
 							method: 'PUT',
@@ -640,8 +640,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Create',
 						value: 'create',
-						action: 'Criar edge stack',
-						description: 'Criar um novo stack de edge computing',
+						action: 'Create edge stack',
+						description: 'Create a new edge computing stack',
 						routing: {
 							request: {
 								method: 'POST',
@@ -661,8 +661,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Delete',
 						value: 'delete',
-						action: 'Deletar edge stack',
-						description: 'Deletar um stack de edge computing',
+						action: 'Delete edge stack',
+						description: 'Delete a edge computing stack',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -673,8 +673,8 @@ export class Portainer implements INodeType {
 					{
 					name: 'Get',
 					value: 'get',
-					action: 'Obter edge stack',
-					description: 'Obter um stack de edge computing específico por ID',
+					action: 'Get edge stack',
+					description: 'Get a edge computing stack by ID',
 					routing: {
 						request: {
 							method: 'GET',
@@ -685,8 +685,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Get Many',
 					value: 'getMany',
-					action: 'Listar edge stacks',
-					description: 'Recuperar todos os stacks de edge computing',
+					action: 'List edge stacks',
+					description: 'Retrieve all edge computing stacks',
 					routing: {
 						request: {
 							method: 'GET',
@@ -697,8 +697,8 @@ export class Portainer implements INodeType {
 				{
 					name: 'Get Status',
 					value: 'getStatus',
-					action: 'Obter status do edge stack',
-					description: 'Obter status de deployment do edge stack',
+					action: 'Get edge stack status',
+					description: 'Get edge stack deployment status',
 					routing: {
 						request: {
 							method: 'GET',
@@ -709,8 +709,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Update',
 						value: 'update',
-						action: 'Atualizar edge stack',
-						description: 'Atualizar um stack de edge computing',
+						action: 'Update edge stack',
+						description: 'Update a edge computing stack',
 						routing: {
 							request: {
 								method: 'PUT',
@@ -747,8 +747,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Create',
 						value: 'create',
-						action: 'Criar container',
-						description: 'Criar um novo container',
+						action: 'Create container',
+						description: 'Create a new container',
 						routing: {
 							request: {
 								method: 'POST',
@@ -774,8 +774,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Delete',
 						value: 'delete',
-						action: 'Deletar container',
-						description: 'Deletar um container',
+						action: 'Delete container',
+						description: 'Delete a container',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -790,8 +790,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Exec',
 						value: 'exec',
-						action: 'Executar comando',
-						description: 'Executar comando no container',
+						action: 'Execute command',
+						description: 'Execute a command in the container',
 						routing: {
 							request: {
 								method: 'POST',
@@ -808,8 +808,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Obter container',
-						description: 'Obter um container específico por ID',
+						action: 'Get container',
+						description: 'Get a container by ID',
 						routing: {
 							request: {
 								method: 'GET',
@@ -820,8 +820,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Logs',
 						value: 'getLogs',
-						action: 'Obter logs',
-						description: 'Obter logs do container',
+						action: 'Get logs',
+						description: 'Get logs for the container',
 						routing: {
 							request: {
 								method: 'GET',
@@ -838,8 +838,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar containers',
-						description: 'Recuperar múltiplos containers',
+						action: 'List containers',
+						description: 'Retrieve multiple containers',
 						routing: {
 							request: {
 								method: 'GET',
@@ -854,8 +854,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Stats',
 						value: 'getStats',
-						action: 'Obter estat sticas',
-						description: 'Obter estatísticas de uso do container',
+						action: 'Get stats',
+						description: 'Get container usage statistics',
 						routing: {
 							request: {
 								method: 'GET',
@@ -869,8 +869,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Inspect',
 						value: 'inspect',
-						action: 'Inspecionar container',
-						description: 'Inspecionar detalhes do container',
+						action: 'Inspect container',
+						description: 'Inspect details of the container',
 						routing: {
 							request: {
 								method: 'GET',
@@ -881,8 +881,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Pause',
 						value: 'pause',
-						action: 'Pausar container',
-						description: 'Pausar um container em execução',
+						action: 'Pause container',
+						description: 'Pause a running container',
 						routing: {
 							request: {
 								method: 'POST',
@@ -893,8 +893,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Restart',
 						value: 'restart',
-						action: 'Reiniciar container',
-						description: 'Reiniciar um container',
+						action: 'Restart container',
+						description: 'Restart a container',
 						routing: {
 							request: {
 								method: 'POST',
@@ -908,8 +908,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Start',
 						value: 'start',
-						action: 'Iniciar container',
-						description: 'Iniciar um container parado',
+						action: 'Start container',
+						description: 'Start a stopped container',
 						routing: {
 							request: {
 								method: 'POST',
@@ -920,8 +920,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Stop',
 						value: 'stop',
-						action: 'Parar container',
-						description: 'Parar um container em execução',
+						action: 'Stop container',
+						description: 'Stop a running container',
 						routing: {
 							request: {
 								method: 'POST',
@@ -935,8 +935,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Unpause',
 						value: 'unpause',
-						action: 'Despausar container',
-						description: 'Despausar um container pausado',
+						action: 'Unpause container',
+						description: 'Unpause a paused container',
 						routing: {
 							request: {
 								method: 'POST',
@@ -965,8 +965,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar ambientes',
-						description: 'Recuperar todos os ambientes disponíveis',
+						action: 'List environments',
+						description: 'Retrieve all environments available',
 						routing: {
 							request: {
 								method: 'GET',
@@ -977,8 +977,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Obter ambiente',
-						description: 'Obter um ambiente específico por ID',
+						action: 'Get environment',
+						description: 'Get a environment by ID',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1007,8 +1007,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar stacks',
-						description: 'Recuperar todos os stacks',
+						action: 'List stacks',
+						description: 'Retrieve all stacks',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1019,8 +1019,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Obter stack',
-						description: 'Obter um stack específico por ID',
+						action: 'Get stack',
+						description: 'Get a stack by ID',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1031,8 +1031,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Delete',
 						value: 'delete',
-						action: 'Deletar stack',
-						description: 'Deletar um stack',
+						action: 'Delete stack',
+						description: 'Delete a stack',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -1046,8 +1046,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Update',
 						value: 'update',
-						action: 'Atualizar stack',
-						description: 'Atualizar um stack existente',
+						action: 'Update stack',
+						description: 'Update an existing stack',
 						routing: {
 							request: {
 								method: 'PUT',
@@ -1084,8 +1084,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Build',
 						value: 'build',
-						action: 'Build imagem',
-						description: 'Construir uma imagem a partir de Dockerfile',
+						action: 'Build image',
+						description: 'Build an image from a Dockerfile',
 						routing: {
 							request: {
 								method: 'POST',
@@ -1105,8 +1105,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Delete',
 						value: 'delete',
-						action: 'Deletar imagem',
-						description: 'Deletar uma imagem',
+						action: 'Delete image',
+						description: 'Delete an image',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -1121,8 +1121,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Obter imagem',
-						description: 'Obter uma imagem específica por ID',
+						action: 'Get image',
+						description: 'Get an image by ID',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1133,8 +1133,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get History',
 						value: 'getHistory',
-						action: 'Obter hist rico',
-						description: 'Obter histórico de uma imagem',
+						action: 'Get history',
+						description: 'Get image history',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1145,8 +1145,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar imagens',
-						description: 'Recuperar todas as imagens',
+						action: 'List images',
+						description: 'Retrieve all images',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1161,8 +1161,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Inspect',
 						value: 'inspect',
-						action: 'Inspecionar imagem',
-						description: 'Inspecionar detalhes da imagem',
+						action: 'Inspect image',
+						description: 'Inspect details of the image',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1173,8 +1173,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Pull',
 						value: 'pull',
-						action: 'Pull imagem',
-						description: 'Fazer pull de uma imagem do registry',
+						action: 'Pull image',
+						description: 'Pull an image from a registry',
 						routing: {
 							request: {
 								method: 'POST',
@@ -1192,8 +1192,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Push',
 						value: 'push',
-						action: 'Push imagem',
-						description: 'Fazer push de uma imagem para o registry',
+						action: 'Push image',
+						description: 'Push an image to a registry',
 						routing: {
 							request: {
 								method: 'POST',
@@ -1210,8 +1210,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Tag',
 						value: 'tag',
-						action: 'Tag imagem',
-						description: 'Criar tag para uma imagem',
+						action: 'Tag image',
+						description: 'Create a tag for an image',
 						routing: {
 							request: {
 								method: 'POST',
@@ -1244,8 +1244,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar volumes',
-						description: 'Recuperar todos os volumes',
+						action: 'List volumes',
+						description: 'Retrieve all volumes',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1256,8 +1256,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Delete',
 						value: 'delete',
-						action: 'Deletar volume',
-						description: 'Deletar um volume',
+						action: 'Delete volume',
+						description: 'Delete a volume',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -1289,8 +1289,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar redes',
-						description: 'Recuperar todas as redes',
+						action: 'List networks',
+						description: 'Retrieve all networks',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1301,8 +1301,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Delete',
 						value: 'delete',
-						action: 'Deletar rede',
-						description: 'Deletar uma rede',
+						action: 'Delete network',
+						description: 'Delete a network',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -1331,8 +1331,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar usu rios',
-						description: 'Recuperar todos os usuários',
+						action: 'List users',
+						description: 'Retrieve all users',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1343,8 +1343,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Obter usu rio',
-						description: 'Obter um usuário específico por ID',
+						action: 'Get user',
+						description: 'Get a user by ID',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1373,8 +1373,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Create',
 						value: 'create',
-						action: 'Criar service',
-						description: 'Criar um novo service Docker Swarm',
+						action: 'Create service',
+						description: 'Create a new Docker Swarm service',
 						routing: {
 							request: {
 								method: 'POST',
@@ -1406,8 +1406,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Delete',
 						value: 'delete',
-						action: 'Deletar service',
-						description: 'Deletar um service Docker Swarm',
+						action: 'Delete service',
+						description: 'Delete a Docker Swarm service',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -1418,8 +1418,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Obter service',
-						description: 'Obter um service específico por ID',
+						action: 'Get service',
+						description: 'Get a service by ID',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1430,8 +1430,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Logs',
 						value: 'getLogs',
-						action: 'Obter logs',
-						description: 'Obter logs do service',
+						action: 'Get logs',
+						description: 'Get logs for the service',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1448,8 +1448,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar services',
-						description: 'Recuperar todos os services Docker Swarm',
+						action: 'List services',
+						description: 'Retrieve all Docker Swarm services',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1464,7 +1464,7 @@ export class Portainer implements INodeType {
 						name: 'Scale',
 						value: 'scale',
 						action: 'Escalar service',
-						description: 'Escalar um service Docker Swarm',
+						description: 'Scale a Docker Swarm service',
 						routing: {
 							request: {
 								method: 'POST',
@@ -1485,8 +1485,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Update',
 						value: 'update',
-						action: 'Atualizar service',
-						description: 'Atualizar um service Docker Swarm',
+						action: 'Update service',
+						description: 'Update a Docker Swarm service',
 						routing: {
 							request: {
 								method: 'POST',
@@ -1526,8 +1526,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Create',
 						value: 'create',
-						action: 'Criar secret',
-						description: 'Criar um novo secret Docker Swarm',
+						action: 'Create secret',
+						description: 'Create a new secret Docker Swarm',
 						routing: {
 							request: {
 								method: 'POST',
@@ -1543,8 +1543,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Delete',
 						value: 'delete',
-						action: 'Deletar secret',
-						description: 'Deletar um secret Docker Swarm',
+						action: 'Delete secret',
+						description: 'Delete a secret Docker Swarm',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -1555,8 +1555,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Obter secret',
-						description: 'Obter um secret específico por ID',
+						action: 'Get secret',
+						description: 'Get a secret by ID',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1567,8 +1567,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar secrets',
-						description: 'Recuperar todos os secrets Docker Swarm',
+						action: 'List secrets',
+						description: 'Retrieve all Docker Swarm secrets',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1582,8 +1582,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Inspect',
 						value: 'inspect',
-						action: 'Inspecionar secret',
-						description: 'Inspecionar detalhes do secret',
+						action: 'Inspect secret',
+						description: 'Inspect details of the secret',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1612,8 +1612,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Create',
 						value: 'create',
-						action: 'Criar config',
-						description: 'Criar um novo config Docker Swarm',
+						action: 'Create config',
+						description: 'Create a new config Docker Swarm',
 						routing: {
 							request: {
 								method: 'POST',
@@ -1629,8 +1629,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Delete',
 						value: 'delete',
-						action: 'Deletar config',
-						description: 'Deletar um config Docker Swarm',
+						action: 'Delete config',
+						description: 'Delete a config Docker Swarm',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -1641,8 +1641,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Obter config',
-						description: 'Obter um config específico por ID',
+						action: 'Get config',
+						description: 'Get a config by ID',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1653,8 +1653,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar configs',
-						description: 'Recuperar todos os configs Docker Swarm',
+						action: 'List configs',
+						description: 'Retrieve all configs Docker Swarm',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1668,8 +1668,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Inspect',
 						value: 'inspect',
-						action: 'Inspecionar config',
-						description: 'Inspecionar detalhes do config',
+						action: 'Inspect config',
+						description: 'Inspect details of the config',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1698,8 +1698,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Obter node',
-						description: 'Obter um node específico por ID',
+						action: 'Get node',
+						description: 'Get a node by ID',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1710,8 +1710,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Get Many',
 						value: 'getMany',
-						action: 'Listar nodes',
-						description: 'Recuperar todos os nodes Docker Swarm',
+						action: 'List nodes',
+						description: 'Retrieve all nodes Docker Swarm',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1725,8 +1725,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Inspect',
 						value: 'inspect',
-						action: 'Inspecionar node',
-						description: 'Inspecionar detalhes do node',
+						action: 'Inspect node',
+						description: 'Inspect details of the node',
 						routing: {
 							request: {
 								method: 'GET',
@@ -1737,8 +1737,8 @@ export class Portainer implements INodeType {
 					{
 						name: 'Update',
 						value: 'update',
-						action: 'Atualizar node',
-						description: 'Atualizar um node Docker Swarm',
+						action: 'Update node',
+						description: 'Update a node Docker Swarm',
 						routing: {
 							request: {
 								method: 'POST',
@@ -1773,7 +1773,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '1',
-				description: 'O ID do ambiente/endpoint do Portainer',
+				description: 'The ID of the environment/endpoint in Portainer',
 				placeholder: '1',
 			},
 			{
@@ -1788,7 +1788,6 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID do container',
 				placeholder: 'abc123def456',
 			},
 			{
@@ -1803,7 +1802,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID do stack',
+				description: 'The ID of the stack',
 				placeholder: '1',
 			},
 			{
@@ -1818,7 +1817,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID da imagem',
+				description: 'The ID of the image',
 				placeholder: 'abc123def456',
 			},
 			{
@@ -1833,7 +1832,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O nome do volume',
+				description: 'The name of the volume',
 				placeholder: 'my_volume',
 			},
 			{
@@ -1848,7 +1847,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID da rede',
+				description: 'The ID of the network',
 				placeholder: 'abc123def456',
 			},
 			{
@@ -1863,7 +1862,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID do usuário',
+				description: 'The ID of the user',
 				placeholder: '1',
 			},
 			{
@@ -1878,7 +1877,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID do service Docker Swarm',
+				description: 'The ID of the Docker Swarm service',
 				placeholder: 'abc123def456',
 			},
 			{
@@ -1894,7 +1893,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID do secret Docker Swarm',
+				description: 'The ID of the Docker Swarm secret',
 				placeholder: 'abc123def456',
 			},
 			{
@@ -1909,7 +1908,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID do config Docker Swarm',
+				description: 'The ID of the Docker Swarm config',
 				placeholder: 'abc123def456',
 			},
 			{
@@ -1924,7 +1923,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID do node Docker Swarm',
+				description: 'The ID of the node Docker Swarm',
 				placeholder: 'abc123def456',
 			},
 			{
@@ -1939,7 +1938,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID do template',
+				description: 'The ID of the template',
 				placeholder: '1',
 			},
 			{
@@ -1954,7 +1953,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID do registry',
+				description: 'The ID of the registry',
 				placeholder: '1',
 			},
 			{
@@ -1969,7 +1968,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID da equipe',
+				description: 'The ID of the team',
 				placeholder: '1',
 			},
 			{
@@ -1984,7 +1983,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O ID do webhook',
+				description: 'The ID of the webhook',
 				placeholder: '1',
 			},
 
@@ -2057,7 +2056,6 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nome do container',
 			},
 			{
 				displayName: 'Image',
@@ -2071,7 +2069,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Imagem Docker a ser usada',
+				description: 'Docker image to use',
 				placeholder: 'nginx:latest',
 			},
 			{
@@ -2085,7 +2083,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Comando a ser executado no container',
+				description: 'Command to execute in the container',
 			},
 			{
 				displayName: 'Environment Variables',
@@ -2111,14 +2109,14 @@ export class Portainer implements INodeType {
 								name: 'name',
 								type: 'string',
 								default: '',
-								description: 'Nome da variável',
+								description: 'Variable name',
 							},
 							{
 								displayName: 'Value',
 								name: 'value',
 								type: 'string',
 								default: '',
-								description: 'Valor da variável',
+								description: 'Variable value',
 							},
 						],
 					},
@@ -2135,7 +2133,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Portas expostas (separadas por vírgula)',
+				description: 'Exposed ports (comma-separated)',
 				placeholder: '80,443',
 			},
 			{
@@ -2149,7 +2147,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Mapeamento de portas no formato container:host',
+				description: 'Port mapping in the format container:host',
 				placeholder: '80:8080,443:8443',
 			},
 			{
@@ -2169,7 +2167,6 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: 'no',
-				description: 'Política de reinicialização',
 			},
 
 			// ===========================================
@@ -2187,7 +2184,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '/bin/sh',
-				description: 'Comando a ser executado no container',
+				description: 'Command to execute in the container',
 			},
 			{
 				displayName: 'TTY',
@@ -2243,7 +2240,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: 'all',
-				description: 'Número de linhas do final (ou "all")',
+				description: 'Number of lines from the end (or "all")',
 			},
 			{
 				displayName: 'Timestamps',
@@ -2273,7 +2270,6 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: 'latest',
-				description: 'Tag da imagem',
 			},
 			{
 				displayName: 'Image Name',
@@ -2287,7 +2283,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nome da imagem para pull',
+				description: 'Image name to pull',
 				placeholder: 'nginx',
 			},
 			{
@@ -2302,7 +2298,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nome do repositório',
+				description: 'Repository name',
 			},
 			{
 				displayName: 'New Tag',
@@ -2316,7 +2312,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nova tag para a imagem',
+				description: 'New tag for the image',
 			},
 
 			// ===========================================
@@ -2334,7 +2330,6 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nome do service',
 			},
 			{
 				displayName: 'Replicas',
@@ -2347,7 +2342,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: 1,
-				description: 'Número de réplicas',
+				description: 'Number of replicas',
 			},
 			{
 				displayName: 'Version',
@@ -2361,7 +2356,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: 0,
-				description: 'Versão do objeto para atualização',
+				description: 'Object version for update',
 			},
 
 			// ===========================================
@@ -2380,7 +2375,6 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nome do secret',
 			},
 			{
 				displayName: 'Secret Data',
@@ -2398,7 +2392,6 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Dados do secret',
 			},
 			{
 				displayName: 'Config Name',
@@ -2412,7 +2405,6 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nome do config',
 			},
 			{
 				displayName: 'Config Data',
@@ -2429,7 +2421,6 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Dados do config',
 			},
 
 			// ===========================================
@@ -2447,7 +2438,6 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nome do registry',
 			},
 			{
 				displayName: 'Registry URL',
@@ -2461,7 +2451,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'URL do registry',
+				description: 'URL of the registry',
 			},
 			{
 				displayName: 'Registry Type',
@@ -2483,7 +2473,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '3',
-				description: 'Tipo do registry',
+				description: 'Type of the registry',
 			},
 			{
 				displayName: 'Username',
@@ -2496,7 +2486,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nome de usuário',
+				description: 'Username for the registry',
 			},
 			{
 				displayName: 'Password',
@@ -2512,7 +2502,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Senha',
+				description: 'Password for the registry',
 			},
 
 			// ===========================================
@@ -2530,7 +2520,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nome da equipe',
+				description: 'Name of the team',
 			},
 
 			// ===========================================
@@ -2548,7 +2538,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do grupo de edge computing',
+				description: 'Edge computing group ID',
 			},
 			{
 				displayName: 'Edge Group Name',
@@ -2562,7 +2552,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nome do grupo de edge computing',
+				description: 'Name of the edge computing group',
 			},
 			{
 				displayName: 'Is Dynamic',
@@ -2575,7 +2565,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: false,
-				description: 'Whether o grupo é dinâmico (baseado em tags)',
+				description: 'Whether the group is dynamic (tag-based)',
 			},
 			{
 				displayName: 'Tag IDs',
@@ -2589,7 +2579,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'IDs das tags para grupo dinâmico (separados por vírgula)',
+				description: 'Tag IDs for the dynamic group (comma-separated)',
 				placeholder: '1,2,3',
 			},
 			{
@@ -2604,7 +2594,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'IDs dos endpoints para grupo estático (separados por vírgula)',
+				description: 'Endpoint IDs for the static group (comma-separated)',
 				placeholder: '1,2,3',
 			},
 
@@ -2623,7 +2613,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do stack de edge computing',
+				description: 'Edge computing stack ID',
 			},
 			{
 				displayName: 'Edge Stack Name',
@@ -2637,7 +2627,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nome do stack de edge computing',
+				description: 'Name of the edge computing stack',
 			},
 			{
 				displayName: 'Edge Group IDs',
@@ -2651,7 +2641,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'IDs dos grupos de edge onde o stack será deployado (separados por vírgula)',
+				description: 'Edge group IDs where the stack will be deployed (comma-separated)',
 				placeholder: '1,2,3',
 			},
 			{
@@ -2683,7 +2673,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: false,
-				description: 'Whether fazer pre-pull das imagens antes do deployment',
+				description: 'Whether to pre-pull images before deployment',
 			},
 			{
 				displayName: 'Retry Deploy',
@@ -2713,7 +2703,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Conteúdo do arquivo docker-compose.yml ou stack file',
+				description: 'Contents of the docker-compose.yml file or stack file',
 				placeholder: 'version: "3.8"\nservices:\n  web:\n    image: nginx:latest',
 			},
 			{
@@ -2740,19 +2730,19 @@ export class Portainer implements INodeType {
 								name: 'name',
 								type: 'string',
 								default: '',
-								description: 'Nome da variável de ambiente',
+								description: 'Environment variable name',
 							},
 							{
 								displayName: 'Value',
 								name: 'value',
 								type: 'string',
 								default: '',
-								description: 'Valor da variável de ambiente',
+								description: 'Environment variable value',
 							},
 						],
 					},
 				],
-				description: 'Variáveis de ambiente para o edge stack',
+				description: 'Environment variables for the edge stack',
 			},
 
 			// ===========================================
@@ -2769,7 +2759,6 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do recurso',
 			},
 			{
 				displayName: 'Webhook Type',
@@ -2786,7 +2775,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '2',
-				description: 'Tipo do webhook',
+				description: 'Type of the webhook',
 			},
 
 			// ===========================================
@@ -2806,7 +2795,7 @@ export class Portainer implements INodeType {
 					},
 				},
 				default: '',
-				description: 'O conteúdo do arquivo docker-compose.yml ou stack file',
+				description: 'Contents of the docker-compose.yml file or stack file',
 				placeholder: 'version: "3.8"\nservices:\n  web:\n    image: nginx:latest',
 			},
 			{
@@ -2833,19 +2822,19 @@ export class Portainer implements INodeType {
 								name: 'name',
 								type: 'string',
 								default: '',
-								description: 'Nome da variável de ambiente',
+								description: 'Environment variable name',
 							},
 							{
 								displayName: 'Value',
 								name: 'value',
 								type: 'string',
 								default: '',
-								description: 'Valor da variável de ambiente',
+								description: 'Environment variable value',
 							},
 						],
 					},
 				],
-				description: 'Variáveis de ambiente para o stack',
+				description: 'Environment variables for the stack',
 			},
 			{
 				displayName: 'Prune Services',
@@ -2862,4 +2851,4 @@ export class Portainer implements INodeType {
 			},
 		],
 	};
-} 
+}

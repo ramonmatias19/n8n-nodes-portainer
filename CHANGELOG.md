@@ -1,123 +1,123 @@
 # Changelog
 
-Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
+All notable changes to this project are documented in this file.
 
-O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [2.1.0] - 2025-12-27
 
 ### ✨ Added
-- **🤖 AI Agent Tool Support**: Node agora compatível como Tool no AI Agent do n8n
-  - **IMPLEMENTADO**: Propriedade `usableAsTool: true` na configuração do node
-  - **GRUPO ATUALIZADO**: Alterado de `['transform']` para `['tool']` para melhor categorização
-  - **COMPATIBILIDADE**: Funciona com versões recentes e nightly builds do n8n (≥ v1.79)
-  - **RECURSOS**: O node pode agora ser chamado diretamente pelo AI Agent como ferramenta
-  - **USO**: Aparecer na lista de ferramentas disponíveis no AI Agent Workflow
+- **🤖 AI Agent Tool Support**: Node is now compatible as a Tool in n8n's AI Agent
+  - **IMPLEMENTED**: Added `usableAsTool: true` in the node configuration
+  - **GROUP UPDATED**: Changed from `['transform']` to `['tool']` for better categorization
+  - **COMPATIBILITY**: Works with recent versions and nightly builds of n8n (≥ v1.79)
+  - **FEATURES**: The node can now be called directly by the AI Agent as a tool
+  - **USAGE**: Appears in the list of tools available in an AI Agent workflow
 
 ### 🔧 Enhanced
-- **Categoria Otimizada**: Node agora aparece na categoria "Tool" para melhor descoberta
-- **AI Integration**: Preparado para uso em workflows automatizados com IA
-- **Estabilidade**: Estrutura limpa com roteamento estático compatível com AI Tools
+- **Optimized Category**: Node now appears under the "Tool" category for easier discovery
+- **AI Integration**: Ready for use in AI-automated workflows
+- **Stability**: Clean structure with static routing compatible with AI Tools
 
 ### 📋 Usage Notes
-- **Versão Necessária**: Requer n8n versão ≥ 1.79 ou nightly builds
-- **Instalação**: Reinstalar node após atualização para reconhecimento pelo AI Agent
-- **Configuração**: Reiniciar n8n após instalação para ativar funcionalidade de Tool
+- **Required Version**: Requires n8n version ≥ 1.79 or nightly builds
+- **Installation**: Reinstall the node after updating for AI Agent recognition
+- **Configuration**: Restart n8n after installation to enable Tool functionality
 
 ## [2.0.0] - 2024-01-XX
 
-### ✨ GRANDE ATUALIZAÇÃO: Cobertura 100% da API Portainer 2.27.8
+### ✨ MAJOR UPDATE: 100% coverage of Portainer API 2.27.8
 
-#### 🚀 Novos Recursos Principais
-- **Docker Swarm Services**: Criação, atualização, escalonamento, logs, exclusão completa
-- **Secrets & Configs**: Gerenciamento completo de segredos e configurações do Swarm
-- **Nodes**: Gerenciamento de nós Docker Swarm, inspeção e atualizações
-- **Templates**: Acesso e gerenciamento de templates de aplicação
-- **Registries**: CRUD completo para registries de imagens (DockerHub, ECR, Azure, etc.)
-- **Teams**: Gerenciamento completo de equipes e membros
-- **Settings**: Configurações do Portainer, autenticação, políticas de segurança
-- **Webhooks**: Criação e gerenciamento de webhooks para automação
-- **Edge Groups**: Gerenciamento completo de grupos de edge computing
-- **Edge Stacks**: Deploy e gerenciamento de stacks em edge environments
-- **System**: Status do sistema, versão, informações de nós
+#### 🚀 Main New Features
+- **Docker Swarm Services**: Create, update, scale, logs, full delete support
+- **Secrets & Configs**: Full management of Swarm secrets and configs
+- **Nodes**: Docker Swarm node management, inspection and updates
+- **Templates**: Access and manage application templates
+- **Registries**: Full CRUD for image registries (DockerHub, ECR, Azure, etc.)
+- **Teams**: Full management of teams and members
+- **Settings**: Portainer settings, authentication, security policies
+- **Webhooks**: Create and manage webhooks for automation
+- **Edge Groups**: Full management of edge computing groups
+- **Edge Stacks**: Deploy and manage stacks in edge environments
+- **System**: System status, version, node information
 
-#### 🔧 Operações Expandidas - Containers (13 operações)
-- **Adicionadas**: `create`, `exec`, `getLogs`, `getStats`, `inspect`, `pause`, `unpause`
-- **Melhoradas**: `delete` (com opção de remoção de volumes), `restart`/`stop` (com timeout)
-- **Parâmetros avançados**: Variáveis de ambiente, mapeamento de portas, políticas de reinicialização
+#### 🔧 Expanded Operations - Containers (13 operations)
+- **Added**: `create`, `exec`, `getLogs`, `getStats`, `inspect`, `pause`, `unpause`
+- **Improved**: `delete` (with volume removal option), `restart`/`stop` (with timeout)
+- **Advanced parameters**: Environment variables, port mapping, restart policies
 
-#### 🖼️ Operações Expandidas - Images (9 operações)
-- **Adicionadas**: `build`, `get`, `getHistory`, `inspect`, `pull`, `push`, `tag`
-- **Parâmetros**: Build context, tags, repositórios, autenticação de registry
+#### 🖼️ Expanded Operations - Images (9 operations)
+- **Added**: `build`, `get`, `getHistory`, `inspect`, `pull`, `push`, `tag`
+- **Parameters**: Build context, tags, repositories, registry authentication
 
-#### 🔄 Operações Expandidas - Services (7 operações)
-- **Adicionadas**: `create`, `getLogs`, `scale`, `update`
-- **Funcionalidades**: Criação de services com réplicas, portas, variáveis de ambiente
+#### 🔄 Expanded Operations - Services (7 operations)
+- **Added**: `create`, `getLogs`, `scale`, `update`
+- **Capabilities**: Create services with replicas, ports, and environment variables
 
-#### 🔐 Novos Recursos de Segurança
+#### 🔐 New Security Features
 - **Secrets**: `create`, `delete`, `get`, `getMany`, `inspect`
 - **Configs**: `create`, `delete`, `get`, `getMany`, `inspect`
-- **Suporte completo**: Base64 encoding, labels, gerenciamento de metadados
+- **Full support**: Base64 encoding, labels, metadata management
 
-#### 🏗️ Infraestrutura e Gerenciamento
-- **Nodes**: Inspeção de nós Swarm, atualizações de role/availability
-- **Registries**: Suporte a 7 tipos (Quay.io, Azure, Custom, Gitlab, ProGet, DockerHub, ECR)
-- **Teams**: Gerenciamento completo de equipes organizacionais
+#### 🏗️ Infrastructure and Management
+- **Nodes**: Inspect Swarm nodes, update role/availability
+- **Registries**: Support for 7 types (Quay.io, Azure, Custom, Gitlab, ProGet, DockerHub, ECR)
+- **Teams**: Full management of organizational teams
 
-#### ⚙️ Configurações e Automação
-- **Settings**: 15+ configurações do Portainer (autenticação, segurança, snapshots)
-- **Webhooks**: Automação para services e stacks
-- **System**: Monitoramento de status e versões
+#### ⚙️ Settings and Automation
+- **Settings**: 15+ Portainer settings (authentication, security, snapshots)
+- **Webhooks**: Automation for services and stacks
+- **System**: Monitor status and versions
 
-#### 📊 Estatísticas da Implementação
-- **21 recursos principais** (vs. 7 anteriores)
-- **150+ operações** (vs. 25 anteriores) 
-- **80+ parâmetros específicos** para configuração detalhada
-- **Cobertura da API**: 100% (vs. 20-25% anterior)
+#### 📊 Implementation Stats
+- **21 main resources** (vs. previous 7)
+- **150+ operations** (vs. previous 25)
+- **80+ specific parameters** for detailed configuration
+- **API coverage**: 100% (vs. previous 20–25%)
 
-#### 🛠️ Melhorias Técnicas
-- Estrutura declarativa n8n otimizada
-- Validação de parâmetros aprimorada
-- Documentação inline completa
-- Suporte a todos os tipos de ambiente Portainer
+#### 🛠️ Technical Improvements
+- Optimized declarative n8n structure
+- Improved parameter validation
+- Complete inline documentation
+- Support for all Portainer environment types
 
-### 🔄 Compatibilidade
-- **API Portainer**: 2.27.8 (cobertura completa)
-- **n8n**: Compatível com versões 1.x
-- **Breaking Changes**: Nenhuma para operações existentes
+### 🔄 Compatibility
+- **Portainer API**: 2.27.8 (full coverage)
+- **n8n**: Compatible with 1.x versions
+- **Breaking Changes**: None for existing operations
 
 ## [1.0.1] - 2024-01-XX
 
 ### Added
-- Operação Update para stacks com suporte completo a:
-  - Atualização de conteúdo do stack file (docker-compose.yml)
-  - Gerenciamento de variáveis de ambiente via interface
-  - Opção de prune para remover services não referenciados
-- Parâmetros detalhados para configuração de stacks
-- Validação de dados de entrada
+- Update operation for stacks with full support for:
+  - Updating stack file content (docker-compose.yml)
+  - Managing environment variables via UI
+  - Prune option to remove non-referenced services
+- Detailed parameters for stack configuration
+- Input data validation
 
 ### Changed
-- Melhorada a organização dos parâmetros no node
-- Otimizada a estrutura de roteamento para operações de stack
+- Improved parameter organization in the node
+- Optimized routing structure for stack operations
 
 ### Fixed
-- Correções na compilação TypeScript
-- Ajustes na estrutura de dados para compatibilidade com API
+- TypeScript compilation fixes
+- Data structure adjustments for API compatibility
 
 ## [1.0.0] - 2024-01-XX
 
 ### Added
-- Implementação inicial do node Portainer para n8n
-- Suporte básico para recursos principais:
-  - **Containers**: Listar, obter, iniciar, parar, reiniciar, deletar
-  - **Environments**: Listar e obter ambientes/endpoints
-  - **Images**: Listar e deletar imagens
-  - **Networks**: Listar e deletar redes
-  - **Stacks**: Listar, obter e deletar stacks
-  - **Users**: Listar e obter usuários
-  - **Volumes**: Listar e deletar volumes
-- Credenciais PortainerApi com autenticação via API Key
-- Teste de conectividade automático
-- Documentação completa de instalação e uso
-- Scripts de desenvolvimento e build automatizado 
+- Initial implementation of the Portainer node for n8n
+- Basic support for main resources:
+  - **Containers**: List, get, start, stop, restart, delete
+  - **Environments**: List and get environments/endpoints
+  - **Images**: List and delete images
+  - **Networks**: List and delete networks
+  - **Stacks**: List, get, and delete stacks
+  - **Users**: List and get users
+  - **Volumes**: List and delete volumes
+- PortainerApi credentials with API Key authentication
+- Automatic connectivity test
+- Complete installation and usage documentation
+- Automated development and build scripts
