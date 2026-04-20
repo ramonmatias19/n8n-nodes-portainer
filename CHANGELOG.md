@@ -82,7 +82,7 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - Complete inline documentation
 - Support for all Portainer environment types
 
-### 🔄 Compatibilidade
+### 🔄 Compatibility
 - **Portainer API**: 2.27.8 (full coverage)
 - **n8n**: Compatible with 1.x versions
 - **Breaking Changes**: None for existing operations

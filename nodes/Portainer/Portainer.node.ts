@@ -90,7 +90,7 @@ export class Portainer implements INodeType {
 					{
 						name: 'Secret',
 						value: 'secrets',
-						description: 'Manage secrets Docker Swarm',
+						description: 'Manage Docker Swarm secrets',
 					},
 					{
 						name: 'Service',
@@ -1568,7 +1568,7 @@ export class Portainer implements INodeType {
 						name: 'Get Many',
 						value: 'getMany',
 						action: 'List secrets',
-						description: 'Retrieve all secrets Docker Swarm',
+						description: 'Retrieve all Docker Swarm secrets',
 						routing: {
 							request: {
 								method: 'GET',
@@ -2851,4 +2851,4 @@ export class Portainer implements INodeType {
 			},
 		],
 	};
-} 
+}
