@@ -1,4 +1,66 @@
-import { INodeType, INodeTypeDescription, NodeConnectionType } from 'n8n-workflow';
+import {
+	IExecuteSingleFunctions,
+	IHttpRequestOptions,
+	INodeType,
+	INodeTypeDescription,
+	NodeConnectionType,
+} from 'n8n-workflow';
+
+type EnvVarPair = { name: string; value: string };
+
+async function collectEnvVars(
+	this: IExecuteSingleFunctions,
+	paramPath: string,
+): Promise<EnvVarPair[]> {
+	const raw = (this.getNodeParameter(paramPath, []) as unknown) ?? [];
+	if (!Array.isArray(raw)) return [];
+	return raw
+		.map((item) => ({
+			name: item?.name != null ? String(item.name) : '',
+			value: item?.value != null ? String(item.value) : '',
+		}))
+		.filter((item) => item.name.length > 0);
+}
+
+function setBodyDeep(body: Record<string, unknown>, path: string[], value: unknown): void {
+	let cursor: Record<string, unknown> = body;
+	for (let i = 0; i < path.length - 1; i++) {
+		const key = path[i];
+		if (cursor[key] == null || typeof cursor[key] !== 'object') {
+			cursor[key] = {};
+		}
+		cursor = cursor[key] as Record<string, unknown>;
+	}
+	cursor[path[path.length - 1]] = value;
+}
+
+function envPreSendPairs(paramPath: string, bodyPath: string[]) {
+	return async function (
+		this: IExecuteSingleFunctions,
+		requestOptions: IHttpRequestOptions,
+	): Promise<IHttpRequestOptions> {
+		const items = await collectEnvVars.call(this, paramPath);
+		if (items.length === 0) return requestOptions;
+		const body = (requestOptions.body as Record<string, unknown>) ?? {};
+		setBodyDeep(body, bodyPath, items.map((e) => ({ name: e.name, value: e.value })));
+		requestOptions.body = body;
+		return requestOptions;
+	};
+}
+
+function envPreSendStrings(paramPath: string, bodyPath: string[]) {
+	return async function (
+		this: IExecuteSingleFunctions,
+		requestOptions: IHttpRequestOptions,
+	): Promise<IHttpRequestOptions> {
+		const items = await collectEnvVars.call(this, paramPath);
+		if (items.length === 0) return requestOptions;
+		const body = (requestOptions.body as Record<string, unknown>) ?? {};
+		setBodyDeep(body, bodyPath, items.map((e) => `${e.name}=${e.value}`));
+		requestOptions.body = body;
+		return requestOptions;
+	};
+}
 
 export class Portainer implements INodeType {
 	description: INodeTypeDescription & { usableAsTool?: boolean } = {
@@ -654,8 +716,10 @@ export class Portainer implements INodeType {
 									DeploymentType: '={{parseInt($parameter["deploymentType"]) || 0}}',
 									PrePullImage: '={{$parameter["prePullImage"] || false}}',
 									RetryDeploy: '={{$parameter["retryDeploy"] || false}}',
-									Env: '={{$parameter["environmentVariables"]?.envVar ? $parameter["environmentVariables"].envVar.map(item => ({name: item.name, value: item.value})) : []}}',
 								},
+							},
+							send: {
+								preSend: [envPreSendPairs('environmentVariables.envVar', ['Env'])],
 							},
 						},
 					},
@@ -721,9 +785,11 @@ export class Portainer implements INodeType {
 									EdgeGroups: '={{$parameter["edgeGroupIds"] ? $parameter["edgeGroupIds"].split(",").map(id => parseInt(id.trim())) : []}}',
 									PrePullImage: '={{$parameter["prePullImage"] || false}}',
 									RetryDeploy: '={{$parameter["retryDeploy"] || false}}',
-									Env: '={{$parameter["environmentVariables"]?.envVar ? $parameter["environmentVariables"].envVar.map(item => ({name: item.name, value: item.value})) : []}}',
 									Prune: '={{$parameter["prune"] || false}}',
 								},
+							},
+							send: {
+								preSend: [envPreSendPairs('environmentVariables.envVar', ['Env'])],
 							},
 						},
 					},
@@ -760,7 +826,6 @@ export class Portainer implements INodeType {
 								body: {
 									Image: '={{$parameter["image"]}}',
 									Cmd: '={{$parameter["command"] ? $parameter["command"].split(" ") : undefined}}',
-									Env: '={{$parameter["environmentVariables"]?.envVar ? $parameter["environmentVariables"].envVar.map(item => item.name + "=" + item.value) : undefined}}',
 									ExposedPorts: '={{$parameter["exposedPorts"] ? Object.fromEntries($parameter["exposedPorts"].split(",").map(port => [port.trim() + "/tcp", {}])) : undefined}}',
 									HostConfig: {
 										PortBindings: '={{$parameter["portBindings"] ? Object.fromEntries($parameter["portBindings"].split(",").map(binding => { const [container, host] = binding.split(":"); return [container.trim() + "/tcp", [{ HostPort: host.trim() }]]; })) : undefined}}',
@@ -769,6 +834,9 @@ export class Portainer implements INodeType {
 										},
 									},
 								},
+							},
+							send: {
+								preSend: [envPreSendStrings('environmentVariables.envVar', ['Env'])],
 							},
 						},
 					},
@@ -1058,9 +1126,11 @@ export class Portainer implements INodeType {
 								},
 								body: {
 									stackFileContent: '={{$parameter["stackFileContent"] || undefined}}',
-									env: '={{$parameter["env"]?.envVar ? $parameter["env"].envVar.map(item => ({name: item.name, value: item.value})) : undefined}}',
 									prune: '={{$parameter["prune"] || false}}',
 								},
+							},
+							send: {
+								preSend: [envPreSendPairs('env.envVar', ['env'])],
 							},
 						},
 					},
@@ -1385,7 +1455,6 @@ export class Portainer implements INodeType {
 									TaskTemplate: {
 										ContainerSpec: {
 											Image: '={{$parameter["image"]}}',
-											Env: '={{$parameter["environmentVariables"]?.envVar ? $parameter["environmentVariables"].envVar.map(item => item.name + "=" + item.value) : undefined}}',
 											Args: '={{$parameter["args"] ? $parameter["args"].split(" ") : undefined}}',
 										},
 										RestartPolicy: {
@@ -1401,6 +1470,9 @@ export class Portainer implements INodeType {
 										Ports: '={{$parameter["ports"] ? $parameter["ports"].split(",").map(port => { const [published, target] = port.split(":"); return { Protocol: "tcp", PublishedPort: parseInt(published.trim()), TargetPort: parseInt(target.trim()) }; }) : undefined}}',
 									},
 								},
+							},
+							send: {
+								preSend: [envPreSendStrings('environmentVariables.envVar', ['TaskTemplate', 'ContainerSpec', 'Env'])],
 							},
 						},
 					},
@@ -1499,10 +1571,12 @@ export class Portainer implements INodeType {
 									TaskTemplate: {
 										ContainerSpec: {
 											Image: '={{$parameter["image"]}}',
-											Env: '={{$parameter["environmentVariables"]?.envVar ? $parameter["environmentVariables"].envVar.map(item => item.name + "=" + item.value) : undefined}}',
 										},
 									},
 								},
+							},
+							send: {
+								preSend: [envPreSendStrings('environmentVariables.envVar', ['TaskTemplate', 'ContainerSpec', 'Env'])],
 							},
 						},
 					},

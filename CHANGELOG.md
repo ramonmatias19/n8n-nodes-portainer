@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.4] - 2026-04-20
+
+### 🐛 Fixed
+- **Expressions in Name/Value pairs were not evaluated at runtime** (#7): environment-variable pairs in Stacks (create/update), Edge Stacks (create/update), Containers (create), and Services (create/update) now evaluate n8n expressions (e.g. `{{$json.foo}}`) instead of sending literal strings. Switched the `Env`/`env` body fields from static declarative templates to `routing.send.preSend` hooks that resolve parameters via `this.getNodeParameter()`, which recursively resolves fixedCollection values.
+- Covers both Docker-style `KEY=VALUE` string arrays (Services, Containers) and Portainer-style `{ name, value }` object arrays (Stacks, Edge Stacks).
+
 ## [2.1.3] - 2026-04-20
 
 ### ✨ Added
