@@ -5,6 +5,19 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.2] - 2026-04-20
+
+### 🐛 Fixed
+- **Community Node Install Error**: Fixed `Cannot set properties of undefined (setting 'n8n-nodes-portainer')` thrown by n8n when installing via the Community Nodes UI (#4).
+  - Removed stale `main: "index.js"` pointer (file never existed) so Node's package loader no longer fails mid-install.
+  - Added explicit empty `dependencies: {}` so n8n's package-registration setter always has a target object.
+  - Stopped shipping a stray `dist/package.json` artifact by dropping `package.json` from `tsconfig.json` `include`; lint keeps covering it via a dedicated `tsconfig.eslint.json`.
+
+### 🌐 Changed
+- Translated remaining Portuguese strings to English, polishing PR #6:
+  - CHANGELOG heading `Compatibilidade` → `Compatibility`.
+  - Node descriptions `Manage/Retrieve all secrets Docker Swarm` → `Manage/Retrieve all Docker Swarm secrets`.
+
 ## [2.1.0] - 2025-12-27
 
 ### ✨ Added

@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-portainer",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Custom n8n node for full integration with the Portainer API 2.27.8 — 100% coverage with 21 resources and 150+ operations including Docker Containers, Images, Services, Swarm, Networks, Volumes, Stacks, Secrets, Configs, Nodes, Templates, Registries, Teams, Settings, Webhooks, Edge Computing, and System",
   "keywords": [
     "n8n-community-node-package",
@@ -20,7 +20,6 @@
     "type": "git",
     "url": "git+https://github.com/ramonmatias19/n8n-nodes-portainer.git"
   },
-  "main": "index.js",
   "scripts": {
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",
@@ -47,6 +46,7 @@
       "dist/nodes/Portainer/Portainer.node.js"
     ]
   },
+  "dependencies": {},
   "devDependencies": {
     "@typescript-eslint/parser": "^5.45.0",
     "eslint": "^8.56.0",

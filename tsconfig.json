@@ -15,11 +15,10 @@
 	},
 	"include": [
 		"credentials/**/*",
-		"nodes/**/*",
-		"package.json"
+		"nodes/**/*"
 	],
 	"exclude": [
 		"node_modules/**/*",
 		"dist/**/*"
 	]
-} 
+}
