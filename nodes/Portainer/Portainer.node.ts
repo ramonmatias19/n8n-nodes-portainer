@@ -84,7 +84,7 @@ export class Portainer implements INodeType {
 			},
 		],
 		requestDefaults: {
-			baseURL: '={{$credentials.baseUrl.replace(/\/+$/, "")}}/api',
+			baseURL: '={{$credentials.baseUrl.replace(new RegExp("/+$"), "")}}/api',
 			skipSslCertificateValidation: '={{$credentials.ignoreSsl}}',
 			headers: {
 				Accept: 'application/json',
