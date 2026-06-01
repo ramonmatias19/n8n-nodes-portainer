@@ -3,4 +3,7 @@ dist/
 *.log
 .DS_Store
 .env
-.vscode/ 
+.env.test
+.env.local
+.vscode/
+tests/results/

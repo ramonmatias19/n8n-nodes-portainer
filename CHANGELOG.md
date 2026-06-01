@@ -5,6 +5,52 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.6] - 2026-06-01
+
+### 🐛 Fixed — "Invalid Syntax" when saving credentials / running any operation (#8)
+
+A fresh install could not save the Portainer API credential ("Invalid Syntax") and every operation (e.g. List Environments) threw `Error: invalid syntax` at `Expression.renderExpression`. The same HTTP request worked from the core HTTP Request node, confirming the bug was in this node's expressions — not the server.
+
+- **Root cause**: the trailing-slash strip added in 2.1.3 was written as a regex literal *inside a single-quoted string*: `'={{$credentials.baseUrl.replace(/\/+$/, "")}}/api'`. JavaScript string escaping collapses `\/` to `/`, so the value n8n actually parsed was `replace(//+$/, "")` — the `//` opens a comment / invalid regex, so the n8n expression engine rejected the whole expression as **invalid syntax**.
+  - Hit at **credential save** via `test.request.url` in `PortainerApi.credentials.ts`.
+  - Hit at **runtime** via `requestDefaults.baseURL` in `Portainer.node.ts` (broke every operation).
+- **Fix**: strip the trailing slash with plain, parser-safe String methods (no regex literal):
+  `={{$credentials.baseUrl.endsWith("/") ? $credentials.baseUrl.slice(0, -1) : $credentials.baseUrl}}/api`
+  Both `https://host:9443` and `https://host:9443/` resolve correctly, and the SSL toggle from 2.1.3 is preserved.
+- **Credit**: thanks to [@albus12138](https://github.com/albus12138) ([#9](https://github.com/ramonmatias19/n8n-nodes-portainer/pull/9)) for independently identifying the same root cause.
+
+### 🧪 Tests
+- Added `tests/expression.test.js` — a dependency-free regression guard asserting neither the credential nor the node embeds a regex-literal expression and that the trailing-slash logic resolves `host`, `host/`, and `host` identically. Run with `node tests/expression.test.js`.
+
+## [2.1.5] - 2026-04-20
+
+### 🐛 Fixed — System resource endpoints returning 404 on Portainer ≥ 2.40
+
+End-to-end validation against a live Portainer 2.40.0 instance showed two System operations hitting non-existent paths.
+
+- **Operation "System → Get Version"**
+  - **PROBLEMA**: `GET /api/status/version` retornava `HTTP 404 — 404 page not found` no Portainer 2.40.0. O path correto migrou pra `/api/system/version`.
+  - **SOLUÇÃO**: Rota atualizada pra `/system/version`. Validado contra Portainer 2.40.0 retornando `ServerVersion`, `VersionSupport`, `ServerEdition`, `DatabaseVersion`, `UpdateAvailable`.
+
+- **Operation "System → Get Nodes"**
+  - **PROBLEMA**: `GET /api/status/nodes` retornava `HTTP 404`. Path migrado pra `/api/system/nodes`.
+  - **SOLUÇÃO**: Rota atualizada pra `/system/nodes`. Validado retornando `{ nodes: N }`.
+
+A operação `System → Get Status` (`/status`) continua funcionando — não precisou mudar.
+
+### 🔧 Technical
+- Adicionada suite de smoke test (`tests/smoke.js`) cobrindo **23 endpoints read-only** em 13 resources (users, status, settings, teams, registries, templates, webhooks, stacks, edge_groups, edge_stacks, endpoints, containers, images, networks, volumes, services, secrets, configs, docker info)
+- Credenciais consumidas via `.env.test` (gitignored), executa com `node tests/smoke.js`
+- Resultado pós-fix: **23/23 endpoints PASS** contra Portainer 2.40.0
+- Build TypeScript + ESLint passando sem erros
+
+### 🧪 How to re-validate
+```bash
+cd n8n-nodes-portainer
+# popular .env.test com PORTAINER_BASE_URL e PORTAINER_API_KEY
+node tests/smoke.js
+```
+
 ## [2.1.4] - 2026-04-20
 
 ### 🐛 Fixed

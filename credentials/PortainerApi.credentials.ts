@@ -53,7 +53,7 @@ export class PortainerApi implements ICredentialType {
 	test: ICredentialTestRequest = {
 		request: {
 			method: 'GET',
-			url: '={{$credentials.baseUrl.replace(/\/+$/, "")}}/api/users/me',
+			url: '={{$credentials.baseUrl.endsWith("/") ? $credentials.baseUrl.slice(0, -1) : $credentials.baseUrl}}/api/users/me',
 			skipSslCertificateValidation: '={{$credentials.ignoreSsl}}',
 		},
 		rules: [

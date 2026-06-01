@@ -76,7 +76,7 @@ export class Portainer implements INodeType {
 		},
 		inputs: [NodeConnectionType.Main],
 		outputs: [NodeConnectionType.Main],
-		usableAsTool: true,
+		// usableAsTool removido: structuredClone falha em preSend function refs (n8n recente)
 		credentials: [
 			{
 				name: 'portainerApi',
@@ -84,7 +84,7 @@ export class Portainer implements INodeType {
 			},
 		],
 		requestDefaults: {
-			baseURL: '={{$credentials.baseUrl.replace(/\/+$/, "")}}/api',
+			baseURL: '={{$credentials.baseUrl.endsWith("/") ? $credentials.baseUrl.slice(0, -1) : $credentials.baseUrl}}/api',
 			skipSslCertificateValidation: '={{$credentials.ignoreSsl}}',
 			headers: {
 				Accept: 'application/json',
@@ -576,7 +576,7 @@ export class Portainer implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '/status/version',
+								url: '/system/version',
 							},
 						},
 					},
@@ -588,7 +588,7 @@ export class Portainer implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '/status/nodes',
+								url: '/system/nodes',
 							},
 						},
 					},
